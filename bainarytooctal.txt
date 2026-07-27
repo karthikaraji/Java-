@@ -1,0 +1,28 @@
+import java.util.Scanner;
+public class BinaryToOctal {
+static void octal(int n) {
+int decimal = 0;
+int power = 1;
+while (n > 0) {
+int rem = n % 10;
+decimal = decimal + (rem * power);
+power = power * 2;
+n = n / 10;
+}
+int octal = 0;
+int place = 1;
+while (decimal > 0) {
+int rem = decimal % 8;
+octal = octal + (rem * place);
+place = place * 10;
+decimal = decimal / 8;
+}
+System.out.println("Octal = " + octal);
+}
+public static void main(String args[]) {
+Scanner sc = new Scanner(System.in);
+System.out.print("Enter Binary Number: ");
+int n = sc.nextInt();
+octal(n);
+    }
+}
